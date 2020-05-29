@@ -1,0 +1,17 @@
+{{#each erros}}
+<div class="alert alert-danger" role="alert">
+    {{ nome }}
+</div>
+{{/each }}
+<h1>Nova categoria</h1>
+<form action="/categoria/save" method="POST">
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" name="nome" id="nome" placeholder="nome da categoria">
+    </div>
+    <div class="form-group">
+        <label for="slug">Password</label>
+        <input type="text" name="slug" class="form-control" id="slug" placeholder="slug da categoria">
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>

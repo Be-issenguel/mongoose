@@ -1,0 +1,19 @@
+{{>_msg }}
+<h1>Listagem de posts <a href="btn btn-success">+</a></h1>
+{{#each postagens }}
+<div class="card mt-2">
+    <div class="card-body">
+        <h5 class="card-title">{{ titulo }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{slug}}</h6>
+        <p class="card-text">{{descricao}}</p>
+        <strong>Categoria:</strong> <a href="#" class="card-link">{{categoria.nome}}</a>
+        <strong>Data:</strong> <a href="#" class="card-link">{{data}}</a>
+        <div>
+            <a href="/postagem/edit/{{id}}" class="btn btn-primary">Editar</a>
+            <a href="/postagem/delete/{{id}}" class="btn btn-danger">Remover</a>
+        </div>
+    </div>
+</div>
+{{else }}
+<h2>Sem postagens cadastradas</h2>
+{{/each }}

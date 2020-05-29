@@ -1,0 +1,26 @@
+<div class="jumbotron">
+    <h1 class="display-4">Bem vindo ao meu blog</h1>
+    <p class="lead">Neste blog são publicados conteúdos sobre tecnólogias web</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <a class="btn btn-primary btn-lg" href="/usuario/add" role="button">Crie um conta</a>
+</div>
+{{>_msg }}
+<h1>Listagem de posts <a href="postagem/add" class="btn btn-success">+</a></h1>
+{{#each postagens }}
+<div class="card mt-2">
+    <div class="card-body">
+        <h5 class="card-title">{{ titulo }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{slug}}</h6>
+        <p class="card-text">{{descricao}}</p>
+        <strong>Categoria:</strong> <a href="#" class="card-link">{{categoria.nome}}</a>
+        <strong>Data:</strong> <a href="#" class="card-link">{{data}}</a>
+        <div>
+            <a href="/postagem/edit/{{id}}" class="btn btn-primary">Editar</a>
+            <a href="/postagem/delete/{{id}}" class="btn btn-danger">Remover</a>
+        </div>
+    </div>
+</div>
+{{else }}
+<h2>Sem postagens cadastradas</h2>
+{{/each }}

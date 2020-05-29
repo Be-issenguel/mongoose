@@ -1,0 +1,30 @@
+{{>_msg }}
+{{#each erros }}
+<div class="alert alert-danger">{{nome}}</div>
+{{/each }}
+<div class="card col col-md-6" style="margin: 0px auto;">
+    <div class="card-body">
+        <center>
+            <h1>Crie sua conta</h1>
+        </center>
+        <form action="/usuario/create" method="POST">
+            <div class="form-group">
+                <label for="unome">Nome</label>
+                <input type="text" name="uname" class="form-control" id="unome" placeholder="nome de utilizador">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" class="form-control" id="email" placeholder=" digite se emial">
+            </div>
+            <div class="form-group">
+                <label for="pw1">Palavra-Passe</label>
+                <input type="password" name="pw1" class="form-control" id="pw1" placeholder="palavra passe">
+            </div>
+            <div class="form-group">
+                <label for="pw2">Repitir Palavra-Passe</label>
+                <input type="password" name="pw2" class="form-control" id="pw2" placeholder="repita a palavra pase">
+            </div>
+            <button type="submit" class="btn btn-success btn-block">Cria conta</button>
+        </form>
+    </div>
+</div>
